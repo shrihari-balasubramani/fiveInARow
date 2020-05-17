@@ -1,0 +1,12 @@
+node_modules
+build
+npm-debug.log
+.idea/
+.vscode/
+*.log
+.eslintcache
+.npm
+coverage
+eslint.xml
+eslint.log
+junit.xml
