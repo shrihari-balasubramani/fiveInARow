@@ -41,6 +41,7 @@
   "dependencies": {
     "@babel/polyfill": "7.8.7",
     "@storybook/addon-storyshots": "^5.3.18",
+    "@xstyled/styled-components": "^1.17.1",
     "babel-jest": "^26.0.1",
     "chalk": "^4.0.0",
     "compression": "1.7.4",
@@ -64,7 +65,7 @@
     "redux": "4.0.5",
     "reselect": "4.0.0",
     "storybook-react-router": "^1.0.8",
-    "styled-components": "5.1.0"
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
