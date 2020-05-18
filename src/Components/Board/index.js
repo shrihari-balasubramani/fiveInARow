@@ -8,6 +8,7 @@ const BoardWrapper = styled.table`
 	width: 100%;
 	max-width: 1050px;
 	table-layout: fixed;
+	align-self: center;
 `;
 
 const Board = ({ gameMatrix, ...props }) => {
