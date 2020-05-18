@@ -1,5 +1,16 @@
 import React from 'react';
+import styled from '@xstyled/styled-components';
+import Game from './Game';
 
-const Index = props => <p>Hey there the project works, 😜 🤪 😝 </p>;
+const GameWrapper = styled.div`
+	display: flex;
+	justify-content: center;
+`;
+
+const Index = props => (
+	<GameWrapper>
+		<Game />
+	</GameWrapper>
+);
 
 export default Index;

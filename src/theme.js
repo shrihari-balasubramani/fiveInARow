@@ -19,6 +19,8 @@ const theme = {
     shadows: {
       main: 'rgba(0, 0, 0, 0.25)'
     },
+    player1: '#6C9F3C',
+    player2: '#EB8F1E',
     modes: {
       dark: {
         // same as light mode
