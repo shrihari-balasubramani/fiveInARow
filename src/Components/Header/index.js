@@ -18,7 +18,7 @@ const HeaderText = styled.p`
 	color: ${th.color('secondary.background')};
 `;
 
-const Header = ({ currentPlayer = 0, winner = 0 }) => {
+const Header = ({ currentPlayer = 0, winner = 0, winnerBoard, resetBoard }) => {
 	const [players, setPlayers] = useState([]);
 
 	return (
@@ -31,7 +31,12 @@ const Header = ({ currentPlayer = 0, winner = 0 }) => {
 					<DetailsModal open={!players.length} setPlayers={setPlayers} />
 				</div>
 			)}
-			<WinnerModal playerName={players[winner - 1]} />
+			<WinnerModal
+				playerName={players[winner - 1]}
+				winnerBoard={winnerBoard}
+				players={players}
+				resetBoard={resetBoard}
+			/>
 		</HeaderWrapper>
 	);
 };

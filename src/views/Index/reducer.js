@@ -11,10 +11,20 @@ const recordTurn = (state, action) => {
 	return getState(newGameMatrix, [action.row, action.column], currentPlayer);
 };
 
+const resetFunction = (state, action) => {
+	const initGameMatrix = Array.from({ length: 15 }, () =>
+		Array.from({ length: 15 }, () => null)
+	);
+	const lastPlayedCell = [null, null];
+	return getState(initGameMatrix, lastPlayedCell, 1);
+};
+
 const reducer = (state, action) => {
 	switch (action.type) {
 		case 'turn_played':
 			return recordTurn(state, action);
+		case 'reset':
+			return resetFunction();
 		default:
 			throw new Error();
 	}
