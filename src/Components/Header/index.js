@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from '@xstyled/styled-components';
 import { th } from '@xstyled/system';
 import DetailsModal from './DetailsModal';
+import WinnerModal from './WinnerModal';
 
 const HeaderWrapper = styled.div`
 	width: 100%;
@@ -17,7 +18,7 @@ const HeaderText = styled.p`
 	color: ${th.color('secondary.background')};
 `;
 
-const Header = ({ currentPlayer = 0 }) => {
+const Header = ({ currentPlayer = 0, winner = 0 }) => {
 	const [players, setPlayers] = useState([]);
 
 	return (
@@ -30,6 +31,7 @@ const Header = ({ currentPlayer = 0 }) => {
 					<DetailsModal open={!players.length} setPlayers={setPlayers} />
 				</div>
 			)}
+			<WinnerModal playerName={players[winner - 1]} />
 		</HeaderWrapper>
 	);
 };
