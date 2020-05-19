@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import styled from '@xstyled/styled-components';
 import { th } from '@xstyled/system';
+import { useColorMode } from '@xstyled/styled-components';
+import { Button } from '@material-ui/core';
+
 import DetailsModal from './DetailsModal';
 import WinnerModal from './WinnerModal';
 
@@ -11,6 +14,7 @@ const HeaderWrapper = styled.div`
 	display: flex;
 	margin-bottom: 8;
 	align-items: center;
+	position: relative;
 `;
 const HeaderText = styled.p`
 	font-size: 2em;
@@ -18,8 +22,19 @@ const HeaderText = styled.p`
 	color: ${th.color('secondary.background')};
 `;
 
+const ModeBtn = styled(p => <Button classes={{ root: 'root' }} {...p} />)`
+	&.root {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		color: ${th.color('secondary.background')};
+	}
+`;
+
 const Header = ({ currentPlayer = 0, winner = 0, winnerBoard, resetBoard }) => {
 	const [players, setPlayers] = useState([]);
+	const [colorMode, setColorMode] = useColorMode();
 
 	return (
 		<HeaderWrapper isPlayer2={currentPlayer == 2}>
@@ -37,6 +52,13 @@ const Header = ({ currentPlayer = 0, winner = 0, winnerBoard, resetBoard }) => {
 				players={players}
 				resetBoard={resetBoard}
 			/>
+			<ModeBtn
+				onClick={e => {
+					setColorMode(colorMode === 'default' ? 'dark' : 'default');
+				}}
+			>
+				{colorMode === 'dark' ? 'light' : 'dark'} mode
+			</ModeBtn>
 		</HeaderWrapper>
 	);
 };

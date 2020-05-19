@@ -14,7 +14,7 @@ const theme = {
       main: '#666666',
       dark: '#505050',
       darker: '#333333',
-      background: '#F5F5F5'
+      background: 'white'
     },
     shadows: {
       main: 'rgba(0, 0, 0, 0.25)'
@@ -24,6 +24,27 @@ const theme = {
     modes: {
       dark: {
         // same as light mode
+        primary: {
+          lighter: '#2B6EB1',
+          light: '#54AFE8',
+          main: '#EBF8FF',
+          dark: '#A2D9F6',
+          darker: '#75C1F0',
+          background: '#3498DB'
+        },
+        secondary: {
+          lighter: '#333333',
+          light: '#CCCCCC',
+          main: '#EEEEEE',
+          dark: '#F5F5F5',
+          darker: '#DDDDDD',
+          background: '#505050'
+        },
+        shadows: {
+          main: 'rgba(100, 100, 100, 0.25)'
+        },
+        player1: '#6C9F3C',
+        player2: '#EB8F1E'
       }
     }
   },

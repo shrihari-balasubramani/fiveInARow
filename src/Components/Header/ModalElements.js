@@ -15,11 +15,25 @@ export const Paper = styled.div`
 
 export const Text = styled.p`
 	font-size: 1em;
-	color: ${th.color('Primary.Dark')};
+	color: ${th.color('primary.main')};
 	margin-right: 1;
 `;
 
-export const NameInput = styled(Input)``;
+export const NameInput = styled(p => (
+	<Input classes={{ root: 'root', underline: 'underline' }} {...p} />
+))`
+	&.root {
+		color: ${th.color('primary.main')};
+	}
+	&.underline:before {
+		border-bottom-color: ${th.color('primary.main')};
+	}
+	&&.underline:hover {
+		&:before {
+			border-bottom-color: ${th.color('primary.main')};
+		}
+	}
+`;
 
 export const DetailsWrapper = styled.div`
 	display: flex;
