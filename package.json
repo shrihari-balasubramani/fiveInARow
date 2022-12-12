@@ -48,7 +48,7 @@
     "compression": "1.7.4",
     "cross-env": "7.0.2",
     "eslint-plugin-jest": "^23.13.1",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "immer": "6.0.5",
     "intl": "1.2.5",
     "invariant": "2.2.4",
